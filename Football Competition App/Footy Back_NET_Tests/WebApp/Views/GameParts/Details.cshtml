@@ -1,0 +1,42 @@
+@model PublicApi.DTO.v1.GamePart
+
+@{
+    //ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>GamePart</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.Game)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.Game!.Name)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.GamePartType)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.GamePartType!.Name)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.Length)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.Length)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.AdditionalTime)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.AdditionalTime)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

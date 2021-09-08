@@ -1,0 +1,47 @@
+{
+    "name": "sitejs",
+    "version": "1.0.0",
+    "description": "Aspnet JS",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "build": "npx webpack build && Rmdir /Q /S ..\\WebApp\\wwwroot\\js && robocopy .\\dist ..\\WebApp\\wwwroot\\js"
+    },
+    "author": "egrumj",
+    "license": "ISC",
+    "dependencies": {
+      "bootstrap": "^4.6.0",
+      "bootswatch": "^4.6.0",
+      "cldr-core": "^38.1.0",
+      "cldr-dates-modern": "^38.1.0",
+      "cldr-numbers-modern": "^38.1.0",
+      "flatpickr": "^4.6.9",
+      "font-awesome": "^4.7.0",
+      "globalize": "^1.6.0",
+      "jquery": "^3.6.0",
+      "jquery-validation": "^1.19.3",
+      "jquery-validation-unobtrusive": "^3.2.12",
+      "popper.js": "^1.16.1"
+    },
+    "devDependencies": {
+      "@types/jquery": "^3.5.5",
+      "@types/jquery-validation-unobtrusive": "^3.2.32",
+      "@types/jquery.validation": "^1.16.6",
+      "@types/lodash": "^4.14.168",
+      "@types/popper.js": "^1.11.0",
+      "clean-webpack-plugin": "^3.0.0",
+      "copy-webpack-plugin": "^7.0.0",
+      "css-loader": "^5.2.4",
+      "file-loader": "^6.2.0",
+      "html-webpack-plugin": "^5.2.0",
+      "mini-css-extract-plugin": "^1.6.0",
+      "script-loader": "^0.7.2",
+      "terser-webpack-plugin": "^5.1.1",
+      "ts-loader": "^8.2.0",
+      "typescript": "^4.2.4",
+      "url-loader": "^4.1.1",
+      "webpack": "^5.23.0",
+      "webpack-cli": "^4.5.0"
+    }
+  }
+  

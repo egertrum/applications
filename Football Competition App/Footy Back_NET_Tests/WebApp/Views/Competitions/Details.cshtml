@@ -1,0 +1,25 @@
+@model WebApp.ViewModels.Competitions.CompetitionDetailsViewModel
+
+@{
+    //ViewData["Title"] = Base.Resources.Views.Shared.Basic.Details;
+}
+
+<h4 class="text-center">@Model.Competition.Name</h4>
+
+<div>
+    <partial name="_DetailsDelete" model="Model.Competition"/>
+</div>
+<hr />
+<h4 class="text-center">@Base.Resources.DTO.v1.CompetitionTeam.TeamsAttendingThisCompetition</h4>
+<div class="row-cols-1">
+    <div class="text-center">
+        <partial name="_DetailsCompetitionTeams" model="Model.CompetitionTeams"/>
+    </div>
+</div>
+<hr />
+<h4 class="text-center">@Base.Resources.DTO.v1.Game.Games</h4>
+<div class="row-cols-1">
+    <div class="text-center">
+        <partial name="_DetailsGames" model="Model.Games"/>
+    </div>
+</div>

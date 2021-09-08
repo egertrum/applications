@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApp</name>
+    </assembly>
+    <members>
+        <member name="M:WebApp.ApiControllers.Identity.AccountController.Login(DTO.App.V1.Login)">
+            <summary>
+            Login into account
+            </summary>
+            <param name="dto">Login DTO</param>
+            <returns>DTO.App.V1.JwtResponse</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers.Identity.AccountController.Register(DTO.App.V1.Register)">
+            <summary>
+            Register account
+            </summary>
+            <param name="dto">Register DTO</param>
+            <returns>DTO.App.V1.JwtResponse</returns>
+        </member>
+    </members>
+</doc>

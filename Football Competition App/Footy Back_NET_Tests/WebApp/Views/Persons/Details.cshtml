@@ -1,0 +1,12 @@
+@model PublicApi.DTO.v1.Person
+
+@{
+    //ViewData["Title"] = Model.Name;
+}
+
+<h4 class="text-center">@Model.Name</h4>
+
+<div>
+    <hr />
+    <partial name="_DetailsDelete" model="Model"/>
+</div>

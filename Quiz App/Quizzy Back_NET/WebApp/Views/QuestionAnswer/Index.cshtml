@@ -1,0 +1,53 @@
+@model WebApp.ViewModels.QuestionAnswer.QuestionAnswerIndexViewModel
+
+
+<h1 class="text-center">@Model.Title</h1>
+
+<p class="text-center">
+    @if (Model.QuestionId != null)
+    {
+        <a class="text-dark" asp-action="Create" asp-route-questionId="@Model.QuestionId">Add new answer to Question
+            <img class="extra-small-icon" src="~/js/images/right-arrow.png" alt=""/></a>
+    }
+    else
+    {
+        <a class="text-dark" asp-action="Create">Add new answer to Question
+            <img class="extra-small-icon" src="~/js/images/right-arrow.png" alt=""/></a>   
+    }
+</p>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                Question
+            </th>
+            <th class="text-center">
+                Answer value
+            </th>
+            <th class="text-center">
+                Correct answer
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.QuestionAnswers) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Question!.Value)
+            </td>
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.Value)
+            </td>
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.True)
+            </td>
+            <td>
+                <a class="text-dark" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a class="text-dark" asp-action="Delete" asp-route-id="@item.Id">Remove answer</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

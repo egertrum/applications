@@ -1,0 +1,40 @@
+﻿@model WebApp.ViewModels.Competitions.CompetitionIndexViewModel
+
+<hr />
+<form asp-action="Index" method="get" id="search-competition">
+    <div class="form-group">
+        <div class="row">
+            <div class="col">
+                <label class="control-label">@Base.Resources.DTO.v1.Competition.Country</label>
+                <select asp-for="SearchCompetition.CountryId" name="countryId" class="form-control" asp-items="Model.CountrySelectList">
+                    <option></option>
+                </select>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="SearchCompetition.Name" class="control-label"></label>
+                    <input asp-for="SearchCompetition.Name" name="name" class="form-control"/>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label class="control-label">@Base.Resources.DTO.v1.Competition.StartingAfter</label>
+                    @if (Model.SearchCompetition.StartDate != DateTime.MinValue)
+                    {
+                        <input asp-for="SearchCompetition.StartDate" name="startDate" class="form-control"/>
+                    }
+                    else
+                    {
+                        <input asp-for="SearchCompetition.StartDate" name="startDate" value="@DateTime.Now.Date" class="form-control"/>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <div class="form-group">
+                <input type="submit" value="@Base.Resources.Views.Shared.Basic.Search" class="btn btn-primary"/>
+                <a asp-action="Index" asp-route-reset="1" class="btn btn-primary">@Base.Resources.Views.Shared.Basic.Reset</a>
+            </div>
+        </div>
+    </div>
+</form>

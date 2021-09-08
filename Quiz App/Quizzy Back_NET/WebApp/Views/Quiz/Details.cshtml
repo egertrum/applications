@@ -1,0 +1,40 @@
+@model WebApp.ViewModels.Quiz.QuizDetailsViewModel
+
+<h1 class="text-center">@Model.Quiz!.Name</h1>
+<table class="table table-hover">
+    <thead>
+        <tr class="text-center">
+            <th>
+                Question number
+            </th>
+            <th>
+                Question
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.QuizQuestions) {
+        <tr class="text-center">
+            <td>
+                @Html.DisplayFor(modelItem => item.Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Question!.Value)
+            </td>
+            <td>
+                <a class="text-dark" asp-controller="QuestionAnswer" asp-action="Index" asp-route-id="@item.QuestionId">Answers</a> |
+                <a class="text-dark" asp-controller="Question" asp-action="Edit" asp-route-id="@item.QuestionId">Edit</a> |
+                <a class="text-dark" asp-controller="QuestionAnswer" asp-action="Create" asp-route-questionId="@item.QuestionId">Add Answer</a> |
+                <a class="text-dark" asp-controller="QuizQuestion" asp-action="Delete" asp-route-id="@item.Id">Remove from Quiz</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<hr />
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Quiz.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

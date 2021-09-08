@@ -1,0 +1,20 @@
+﻿@model WebApp.ViewModels.CompetitionTeams.CompetitionTeamCreateEditViewModel
+
+<div class="form-group">
+    <div>
+        <label asp-for="CompetitionTeam.TeamId" class="control-label"></label> *
+    </div>
+    <select asp-for="CompetitionTeam.TeamId" class="form-control" asp-items="Model.TeamSelectList">
+        <option value="@null">@Base.Resources.Views.Shared.Basic.SelectOption</option>
+    </select>
+    <span asp-validation-for="CompetitionTeam.TeamId" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <div>
+        <label asp-for="CompetitionTeam.CompetitionId" class="control-label"></label> *
+    </div>
+    <select asp-for="CompetitionTeam.CompetitionId" class="form-control" asp-items="Model.CompetitionSelectList">
+        <option value="@null">@Base.Resources.Views.Shared.Basic.SelectOption</option>
+    </select>
+    <span asp-validation-for="CompetitionTeam.CompetitionId" class="text-danger"></span>
+</div>

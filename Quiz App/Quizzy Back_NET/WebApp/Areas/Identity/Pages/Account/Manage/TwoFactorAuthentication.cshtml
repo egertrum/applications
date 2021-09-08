@@ -1,0 +1,58 @@
+﻿@page
+@using Resources.Areas.Identity.Pages.Account.Manage
+@model TwoFactorAuthenticationModel
+@{
+    ViewData["Title"] = TwoFactorAuthentication.TwoFactorAuthenticationTitle;
+    ViewData["ActivePage"] = ManageNavPages.TwoFactorAuthentication;
+}
+
+<partial name="_StatusMessage" for="StatusMessage" />
+<h4>@ViewData["Title"]</h4>
+@if (Model.Is2faEnabled)
+{
+    if (Model.RecoveryCodesLeft == 0)
+    {
+        <div class="alert alert-danger">
+            <strong>@TwoFactorAuthentication.YouHaveNoRecoveryCodesLeft</strong>
+            <p>@TwoFactorAuthentication.YouMust <a asp-page="./GenerateRecoveryCodes">@TwoFactorAuthentication.GenerateANewSetOfRecoveryCodes</a> @TwoFactorAuthentication.BeforeLoginWithRecoveryCode</p>
+        </div>
+    }
+    else if (Model.RecoveryCodesLeft == 1)
+    {
+        <div class="alert alert-danger">
+            <strong>@TwoFactorAuthentication.YouHaveOneRecoveryCodeLeft</strong>
+            <p>@TwoFactorAuthentication.YouCan <a asp-page="./GenerateRecoveryCodes">@TwoFactorAuthentication.GenerateANewSetOfRecoveryCodes</a>.</p>
+        </div>
+    }
+    else if (Model.RecoveryCodesLeft <= 3)
+    {
+        <div class="alert alert-warning">
+            <strong>@TwoFactorAuthentication.YouHave @Model.RecoveryCodesLeft @TwoFactorAuthentication.RecoveryCodesLeft</strong>
+            <p>@TwoFactorAuthentication.YouShould <a asp-page="./GenerateRecoveryCodes">@TwoFactorAuthentication.GenerateANewSetOfRecoveryCodes</a>.</p>
+        </div>
+    }
+
+    if (Model.IsMachineRemembered)
+    {
+        <form method="post" style="display: inline-block">
+            <button type="submit" class="btn btn-default">@TwoFactorAuthentication.ForgetThisBrowser</button>
+        </form>
+    }
+    <a asp-page="./Disable2fa" class="btn btn-default">@TwoFactorAuthentication.Disable2FA</a>
+    <a asp-page="./GenerateRecoveryCodes" class="btn btn-default">@TwoFactorAuthentication.ResetRecoveryCodes</a>
+}
+
+<h5>@TwoFactorAuthentication.AuthenticatorApp</h5>
+@if (!Model.HasAuthenticator)
+{
+    <a id="enable-authenticator" asp-page="./EnableAuthenticator" class="btn btn-default">@TwoFactorAuthentication.AddAuthenticatorApp</a>
+}
+else
+{
+    <a id="enable-authenticator" asp-page="./EnableAuthenticator" class="btn btn-default">@TwoFactorAuthentication.SetupAuthenticatorApp</a>
+    <a id="reset-authenticator" asp-page="./ResetAuthenticator" class="btn btn-default">@TwoFactorAuthentication.ResetAuthenticatorApp</a>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

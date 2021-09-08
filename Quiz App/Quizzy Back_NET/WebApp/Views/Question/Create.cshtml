@@ -1,0 +1,35 @@
+@model WebApp.ViewModels.Question.QuestionCreateViewModel
+
+<h1 class="text-center">Add new Question</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Question value</label>
+                <input asp-for="Question.Value" class="form-control" />
+                <span asp-validation-for="Question.Value" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Question type</label>
+                <select asp-for="Question.QuestionType" class="form-control">
+                    <option value="@null">---Please select---</option>
+                    @foreach (var item in Model.QuestionTypes!)
+                    {
+                        <option value="@item.ToString()">@item</option>
+                    }
+                </select>
+                <span asp-validation-for="Question.QuestionType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

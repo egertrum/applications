@@ -1,0 +1,41 @@
+﻿@model PublicApi.DTO.v1.Competition
+
+<hr/>
+<dl class="row">
+    <dt class="col-sm-4">
+        @Html.DisplayNameFor(model => model.Country)
+    </dt>
+    <dd class="col-sm-8">
+        @Html.DisplayFor(model => model.Country!.Name)
+    </dd>
+    <dt class="col-sm-4">
+        @Html.DisplayNameFor(model => model.Name)
+    </dt>
+    <dd class="col-sm-8">
+        @Html.DisplayFor(model => model.Name)
+    </dd>
+    <dt class="col-sm-4">
+        @Html.DisplayNameFor(model => model.Organiser)
+    </dt>
+    <dd class="col-sm-8">
+        @Html.DisplayFor(model => model.Organiser)
+    </dd>
+    <dt class="col-sm-4">
+        @Html.DisplayNameFor(model => model.StartDate)
+    </dt>
+    <dd class="col-sm-8">
+        @Html.DisplayFor(model => model.StartDate)
+    </dd>
+    <dt class="col-sm-4">
+        @Html.DisplayNameFor(model => model.EndDate)
+    </dt>
+    <dd class="col-sm-8">
+        @Html.DisplayFor(model => model.EndDate)
+    </dd>
+    <dt class="col-sm-4">
+        @Html.DisplayNameFor(model => model.Comment)
+    </dt>
+    <dd class="col-sm-8">
+        @Html.DisplayFor(model => model.Comment)
+    </dd>
+</dl>

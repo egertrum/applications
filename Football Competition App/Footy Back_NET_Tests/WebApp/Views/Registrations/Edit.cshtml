@@ -1,0 +1,52 @@
+@model WebApp.ViewModels.Registration.RegistrationCreateEditViewModel
+
+@{
+    //ViewData["Title"] = @Base.Resources.Views.Shared.Basic.Edit;
+}
+
+<h4 class="text-center">@Base.Resources.Views.Shared.Basic.Edit</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Registration.CompetitionId" class="control-label"></label>
+                <select asp-for="Registration.CompetitionId" class="form-control" asp-items="Model.CompetitionSelectList"></select>
+                <span asp-validation-for="Registration.CompetitionId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Registration.TeamId" class="control-label"></label>
+                <select asp-for="Registration.TeamId" class="form-control" asp-items="Model.TeamSelectList"></select>
+                <span asp-validation-for="Registration.TeamId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Registration.AppUserId" class="control-label"></label>
+                <select asp-for="Registration.AppUserId" class="form-control" asp-items="Model.UserSelectList"></select>
+                <span asp-validation-for="Registration.AppUserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Registration.Date" class="control-label"></label>
+                <input asp-for="Registration.Date" class="form-control" />
+                <span asp-validation-for="Registration.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Registration.Comment" class="control-label"></label>
+                <input asp-for="Registration.Comment" class="form-control" />
+                <span asp-validation-for="Registration.Comment" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Registration.Id" />
+            <div class="form-group">
+                <input type="submit" value="@Base.Resources.Views.Shared.Basic.Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">@Base.Resources.Views.Shared.Basic.BackToList</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

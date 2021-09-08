@@ -1,0 +1,67 @@
+@model WebApp.ViewModels.Games.GamesIndexViewModel
+
+@{
+    //ViewData["Title"] = Base.Resources.DTO.v1.Game.Games;
+}
+
+<h4 class="text-center">@Model.Title</h4>
+
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>
+            @Base.Resources.DTO.v1.Game.Competition
+        </th>
+        <th>
+            @Base.Resources.DTO.v1.Game.KickOffTime
+        </th>
+        <th>
+            @Base.Resources.DTO.v1.Game.DbGame
+        </th>
+        <th>
+            @Base.Resources.DTO.v1.Game.Score
+        </th>
+        <th>
+            @Base.Resources.DTO.v1.Game.Comment
+        </th>
+        @if (Model.TeamManagerGames != null && Model.TeamManagerGames.Value)
+        {
+            <th></th>
+        }
+        @if (Model.OrganiserGames != null && Model.OrganiserGames.Value || User.IsInRole("Admin"))
+        {
+            <th></th>
+        }
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Games)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Competition!.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KickOffTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Score)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comment)
+            </td>
+            @if (Model.OrganiserGames != null && Model.OrganiserGames.Value || User.IsInRole("Admin"))
+            {
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">@Base.Resources.Views.Shared.Basic.Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">@Base.Resources.Views.Shared.Basic.Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">@Base.Resources.Views.Shared.Basic.Delete</a>
+                </td>
+            }
+        </tr>
+    }
+    </tbody>
+</table>

@@ -1,0 +1,66 @@
+﻿@using Domain.App.Identity
+@using Microsoft.AspNetCore.Identity
+@model WebApp.Areas.Admin.ViewModels.UserIndexViewModel
+
+@{
+    //ViewData["Title"] = @Base.Resources.Areas.Identity.Pages.Account.Login.Users;
+}
+
+<h4 class="text-center">@Base.Resources.Areas.Identity.Pages.Account.Login.Users</h4>
+
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>
+            @Base.Resources.Areas.Identity.Pages.Account.Register.FirstName
+        </th>
+        <th>
+            @Base.Resources.Areas.Identity.Pages.Account.Register.LastName
+        </th>
+        <th>
+            @Base.Resources.Areas.Identity.Pages.Account.Register.Email
+        </th>
+        <th>
+            @Base.Resources.Areas.Identity.Pages.Account.Register.IdentificationCode
+        </th>
+        <th>
+            @Base.Resources.Areas.Identity.Pages.Account.Login.UserId
+        </th>
+        <th>
+            @Base.Resources.Areas.Identity.Pages.Account.Login.Roles
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.AppUsers)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Firstname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lastname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdentificationCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @foreach (var role in item.AppRoles!)
+                {
+                    @Html.Raw(role)
+                }
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">@Base.Resources.Views.Shared.Basic.Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">@Base.Resources.Views.Shared.Basic.Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

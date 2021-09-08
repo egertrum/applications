@@ -1,0 +1,79 @@
+@model WebApp.ViewModels.Teams.TeamIndexViewModel
+
+@{
+    //ViewData["Title"] = Model.Title;
+}
+
+<h4 class="text-center">@Model.Title</h4>
+
+
+@if ((User.Identity?.IsAuthenticated ?? false) && !Model.UserTeams){
+    <p class="text-center">
+        <a class="text-dark" asp-action="MyIndex">@Base.Resources.DTO.v1.Team.MyTeams
+            <img class="extra-small-icon" src="~/js/images/right-arrow.png" alt=""/></a>
+    </p>
+}
+
+@if ((User.Identity?.IsAuthenticated ?? false) && Model.UserTeams){
+    <p class="text-center">
+        <a class="text-dark" asp-action="Create">@Base.Resources.DTO.v1.Team.CreateNewTeam
+            <img class="extra-small-icon" src="~/js/images/right-arrow.png" alt=""/></a>
+    </p>
+    <p class="text-center">
+        <a class="text-dark" asp-controller="Persons" asp-action="Create">@Base.Resources.DTO.v1.Team.AddMembers
+            <img class="extra-small-icon" src="~/js/images/right-arrow.png" alt=""/></a>
+    </p>
+    if (Model.Message != null)
+    {
+        <p class="text-center" style="color:red;">
+            @Model.Message
+        </p>
+    }
+}
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+            </th>
+            <th>
+                @Base.Resources.Views.Shared.Basic.Name
+            </th>
+            <th>
+                @Base.Resources.DTO.v1.Team.TeamMembers
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Teams) {
+        <tr>
+            <td>
+                <img class="very-small-icon" src="~/js/images/pin.png" alt=""/>
+                @Html.DisplayFor(modelItem => item.Country!.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlayersAmount)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id" class="text-dark">@Base.Resources.Views.Shared.Basic.MoreInfo</a>
+                @if (User.IsInRole("Admin") || (User.Identity?.IsAuthenticated ?? false) && Model.UserTeams)
+                {
+                    <text> | </text>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="text-dark">@Base.Resources.Views.Shared.Basic.Edit</a>
+                    <text> | </text>
+                    <a asp-controller="TeamPersons" asp-action="Create" asp-route-id="@item.Id" class="text-dark">@Base.Resources.DTO.v1.Team.AddMember</a>
+                    if (User.IsInRole("Admin"))
+                    {
+                        <text> | </text>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="text-dark">@Base.Resources.Views.Shared.Basic.Delete</a>
+                    }
+                }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

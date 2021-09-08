@@ -1,0 +1,55 @@
+@model PublicApi.DTO.v1.Game
+
+@{
+    //ViewData["Title"] = Base.Resources.Views.Shared.Basic.Details;
+}
+
+<h4 class="text-center">@Model.Name</h4>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.Home)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.Home!.Name)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.Away)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.Away!.Name)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.Competition)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.Competition!.Name)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.KickOffTime)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.KickOffTime)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.HomeScore)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.HomeScore)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.AwayScore)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.AwayScore)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.Comment)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.Comment)
+        </dd>
+    </dl>
+</div>

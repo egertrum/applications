@@ -1,0 +1,42 @@
+﻿@page
+@using Base.Resources.Areas.Identity.Pages.Account
+@model LoginWith2faModel
+@{
+    ViewData["Title"] = LoginWith2fa.TwoFactorAuthentication;
+}
+
+<h1>@LoginWith2fa.TwoFactorAuthentication</h1>
+<hr />
+<p>@LoginWith2fa.LoginIsProtected</p>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-route-returnUrl="@Model.ReturnUrl">
+            <input asp-for="RememberMe" type="hidden" />
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Input.TwoFactorCode">@LoginWith2fa.AuthenticatorCode</label>
+                <input asp-for="Input.TwoFactorCode" class="form-control" autocomplete="off" />
+                <span asp-validation-for="Input.TwoFactorCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label asp-for="Input.RememberMachine">
+                        <input asp-for="Input.RememberMachine" />
+                        @LoginWith2fa.RememberThisMachine
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">@LoginWith2fa.LogIn</button>
+            </div>
+        </form>
+    </div>
+</div>
+<p>
+    @LoginWith2fa.DontHaveAccessToYourAuthenticatorDevice
+    <a id="recovery-code-login" asp-page="./LoginWithRecoveryCode" asp-route-returnUrl="@Model.ReturnUrl">@LoginWith2fa.LogInWithRecoveryCode</a>.
+</p>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

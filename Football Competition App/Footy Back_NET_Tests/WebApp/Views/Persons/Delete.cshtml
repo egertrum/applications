@@ -1,0 +1,17 @@
+@model PublicApi.DTO.v1.Person
+
+@{
+    //ViewData["Title"] = @Base.Resources.Views.Shared.Basic.Delete;
+}
+
+<h4 class="text-center">@Base.Resources.Views.Shared.Basic.SureDeleteThis</h4>
+<div>
+    <h6 class="text-center">@Model.Name</h6>
+    <hr />
+    <partial name="_DetailsDelete" model="Model"/>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="@Base.Resources.Views.Shared.Basic.Delete" class="btn btn-danger" />
+    </form>
+</div>

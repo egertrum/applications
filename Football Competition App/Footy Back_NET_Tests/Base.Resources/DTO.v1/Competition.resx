@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="Name" xml:space="preserve">
+        <value>Competition name</value>
+    </data>
+    <data name="Organiser" xml:space="preserve">
+        <value>Organiser</value>
+    </data>
+    <data name="StartDate" xml:space="preserve">
+        <value>Start date</value>
+    </data>
+    <data name="EndDate" xml:space="preserve">
+        <value>End date</value>
+    </data>
+    <data name="Comment" xml:space="preserve">
+        <value>Comment</value>
+    </data>
+    <data name="CompetitionsOrganisedByMe" xml:space="preserve">
+        <value>Competitions organised by me</value>
+    </data>
+    <data name="DBCompetition" xml:space="preserve">
+        <value>Competition</value>
+    </data>
+    <data name="Competitions" xml:space="preserve">
+        <value>Competitions</value>
+    </data>
+    <data name="MyCompetitions" xml:space="preserve">
+        <value>My Competitions</value>
+    </data>
+    <data name="Date" xml:space="preserve">
+        <value>Date</value>
+    </data>
+    <data name="AboutOrganising" xml:space="preserve">
+        <value>About organising</value>
+    </data>
+    <data name="CountryId" xml:space="preserve">
+        <value>In which country is it taking place?</value>
+    </data>
+    <data name="Country" xml:space="preserve">
+        <value>Country</value>
+    </data>
+    <data name="StartingAfter" xml:space="preserve">
+        <value>Starting after:</value>
+    </data>
+    <data name="NotOrganiser" xml:space="preserve">
+        <value>Not allowed, you are not the organiser of that competition!</value>
+    </data>
+    <data name="Participations" xml:space="preserve">
+        <value>Participations</value>
+    </data>
+    <data name="ElseInfo" xml:space="preserve">
+        <value>-Everything else please add to comments: the exact place, entry fees, maximum amout on players per team etc.</value>
+    </data>
+    <data name="OrganiserInfo" xml:space="preserve">
+        <value>-If you are the organiser then just put your fullname into organiser</value>
+    </data>
+    <data name="DateInfo" xml:space="preserve">
+        <value>-If the competition is going to take place just for one day you can leave the end date empty</value>
+    </data>
+</root>

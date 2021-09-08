@@ -1,0 +1,34 @@
+﻿@page
+@using Resources.Areas.Identity.Pages.Account.Manage
+@model DeletePersonalDataModel
+@{
+    ViewData["Title"] = DeletePersonalData.DeleteData;
+    ViewData["ActivePage"] = ManageNavPages.PersonalData;
+}
+
+<h4>@DeletePersonalData.DeleteData</h4>
+
+<div class="alert alert-warning" role="alert">
+    <p>
+        <strong>@DeletePersonalData.PermanentlyRemoveDataExplanation</strong>
+    </p>
+</div>
+
+<div>
+    <form id="delete-user" method="post" class="form-group">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        @if (Model.RequirePassword)
+        {
+            <div class="form-group">
+                <label asp-for="Input.Password">@DeletePersonalData.Password</label>
+                <input asp-for="Input.Password" class="form-control" />
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+        }
+        <button class="btn btn-danger" type="submit">@DeletePersonalData.DeleteAndClose</button>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

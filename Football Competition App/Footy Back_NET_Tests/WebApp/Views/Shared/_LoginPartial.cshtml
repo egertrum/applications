@@ -1,0 +1,33 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Domain.App.Identity
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+
+
+<ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        var user = await UserManager.GetUserAsync(User);
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
+                <img class="very-small-icon" src="~/js/images/user.png" alt=""/>
+                @Base.Resources.Views.Shared._Layout.Hello, @user.Firstname @user.Lastname!
+            </a>
+        </li>
+        <li class="nav-item">
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Competitions", new {area = ""})">
+                <button type="submit" class="nav-link btn btn-link text-dark">@Base.Resources.Views.Shared._Layout.Logout</button>
+            </form>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">@Base.Resources.Views.Shared._Layout.Register</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">@Base.Resources.Views.Shared._Layout.Login</a>
+        </li>
+    }
+</ul>

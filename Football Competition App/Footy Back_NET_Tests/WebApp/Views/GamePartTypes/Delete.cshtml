@@ -1,0 +1,23 @@
+@model PublicApi.DTO.v1.GamePartType
+
+@{
+    //ViewData["Title"] = @Base.Resources.Views.Shared.Basic.Delete;
+}
+<h4 class="text-center">@Base.Resources.Views.Shared.Basic.SureDeleteThis</h4>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">@Base.Resources.Views.Shared.Basic.BackToList</a>
+    </form>
+</div>

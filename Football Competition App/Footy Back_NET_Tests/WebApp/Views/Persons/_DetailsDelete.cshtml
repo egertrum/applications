@@ -1,0 +1,52 @@
+﻿@using Microsoft.EntityFrameworkCore
+@model PublicApi.DTO.v1.Person
+
+<dl class="row">
+    <dt class="col-sm-4">
+        @Html.DisplayNameFor(model => model.Country)
+    </dt>
+    <dd class="col-sm-8">
+    @Html.DisplayFor(model => model.Country!.Name)
+    <dt class="col-sm-4">
+        @Html.DisplayNameFor(model => model.FirstName)
+    </dt>
+    <dd class="col-sm-8">
+        @Html.DisplayFor(model => model.FirstName)
+    </dd>
+    <dt class="col-sm-4">
+        @Html.DisplayNameFor(model => model.LastName)
+    </dt>
+    <dd class="col-sm-8">
+        @Html.DisplayFor(model => model.LastName)
+    </dd>
+    <dt class="col-sm-4">
+        @Html.DisplayNameFor(model => model.PersonTeams)
+    </dt>
+    <dd class="col-sm-8">
+        @for (var i = 0; i < Model.PersonTeams!.Count; i++)
+        {
+            var item = Model.PersonTeams!.ElementAt(i);
+            var team = item.Key;
+            if (i != 0)
+            {
+                @Html.Raw(" | " + team)
+            }
+            else
+            {
+                @Html.Raw(team)   
+            }
+        }
+    </dd>
+    <dt class="col-sm-4">
+        @Html.DisplayNameFor(model => model.BirthDate)
+    </dt>
+    <dd class="col-sm-8">
+        @Html.DisplayFor(model => model.BirthDate)
+    </dd>
+    <dt class="col-sm-4">
+        @Html.DisplayNameFor(model => model.Gender)
+    </dt>
+    <dd class="col-sm-8">
+        @Html.DisplayFor(model => model.Gender)
+    </dd>
+</dl>

@@ -1,0 +1,29 @@
+<import from="../components/todo-input" />
+<import from="../components/todo-element" />
+
+<div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="row container d-flex justify-content-center">
+            <div class="col-md-12">
+                <div class="card px-3">
+                    <div class="card-body">
+                        <h4 class="card-title">Chuck Norris ToDo list</h4>
+
+                        <todo-input placeholder.bind="'New todo!'">
+                        </todo-input>
+
+
+                        <div class="list-wrapper">
+                            <ul class="d-flex flex-column todo-list">
+
+
+                                <todo-element repeat.for="item of appState.todos" item.bind="item" remove-callback.bind="removeTodo" todo-no.bind="$index"></todo-element>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+@model WebApp.ViewModels.QuizQuestion.QuizQuestionCreateViewModel
+
+<h1 class="text-center">Add new question to quiz</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Quiz</label>
+                <select asp-for="QuizQuestion.QuizId" class="form-control" asp-items="@Model.QuizzesSelectList">
+                    <option value="@null">---Please select---</option>
+                </select>
+                <span asp-validation-for="QuizQuestion.QuizId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Question</label>
+                <select asp-for="QuizQuestion.QuestionId" class="form-control" asp-items="@Model.QuestionsSelectList">
+                    <option value="@null">---Please select---</option>
+                </select>
+                <span asp-validation-for="QuizQuestion.QuestionId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

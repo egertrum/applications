@@ -1,0 +1,28 @@
+<h1 class="headerOne">
+    <div repeat.for="item of data[0].categories"> ${item.charAt(0).toUpperCase() + item.slice(1)} jokes </div>
+</h1>
+
+<table class="table table-striped table-dark">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Duplicates</th>
+            <th scope="col">Joke</th>
+        </tr>
+    </thead>
+    <tbody> 
+
+        <tr repeat.for="joke of data">
+            <td>
+                ${data.length - $index}
+            </td>
+            <td>
+                ${joke.duplicates}
+            </td>
+            <td style="font-weight: bold">
+                ${joke.value}
+            </td>
+        </tr>
+
+    </tbody>
+</table>

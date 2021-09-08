@@ -1,0 +1,42 @@
+﻿@model WebApp.ViewModels.Teams.TeamCreateEditDetailsViewModel
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Base.Resources.DTO.v1.Team.TeamMember
+            </th>
+            <th>
+                @Base.Resources.DTO.v1.Team.Role
+            </th>
+            <th>
+                @Base.Resources.DTO.v1.Team.TeamMemberSince
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.TeamPersons!) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Person!.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Role!.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Since)
+            </td>
+            <td>
+                <a asp-controller="Persons" asp-action="Details" asp-route-id="@item.Person!.Id" class="text-dark">@Base.Resources.DTO.v1.Person.PersonDetails</a>
+                @if (Model.BelongsToUser || User.IsInRole("Admin"))
+                {
+                    <text> | </text>
+                    <a asp-controller="TeamPersons" asp-action="Delete" asp-route-id="@item.Id" class="text-dark">@Base.Resources.DTO.v1.Person.RemoveFromTeam</a>
+                }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+

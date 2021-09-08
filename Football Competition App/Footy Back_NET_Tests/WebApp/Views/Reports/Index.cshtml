@@ -1,0 +1,44 @@
+@model IEnumerable<PublicApi.DTO.v1.Report>
+
+@{
+    //ViewData["Title"] = Base.Resources.DTO.v1.Report.Reports;
+}
+
+<h4 class="text-center">@Base.Resources.DTO.v1.Report.Reports</h4>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Base.Resources.DTO.v1.Report.Submitter
+            </th>
+            <th>
+                @Base.Resources.DTO.v1.Report.AppUserId
+            </th>
+            <th>
+                @Base.Resources.DTO.v1.Report.Title
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <!--item.AppUser != null ? item.AppUser.Firstname : "Anonymous"-->
+                @Html.DisplayFor(modelItem => item.Submitter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppUserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id">@Base.Resources.Views.Shared.Basic.Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">@Base.Resources.Views.Shared.Basic.Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

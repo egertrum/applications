@@ -1,0 +1,47 @@
+﻿@model WebApp.ViewModels.UserAnswer.UserAnswerFeedBackViewModel
+
+<h1 class="text-center">Results</h1>
+
+<h4 class="text-center">Points: @Model.CorrectAnswers/@Model.MaxPoints</h4>
+
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>
+            Question
+        </th>
+        <th class="text-center">
+            Answer
+        </th>
+        <th class="text-center">
+            Correct
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.UserAnswers) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuestionAnswer!.Question!.Value)
+            </td>
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.QuestionAnswer!.Value)
+            </td>
+            <td class="text-center">
+                @if (item.QuestionAnswer!.True)
+                {
+                    <img class="extra-small-icon" src="~/js/images/tick.png" alt=""/>
+                }
+                else
+                {
+                    <img class="extra-small-icon" src="~/js/images/wrong.png" alt=""/>
+                }
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<div>
+    <a class="btn btn-primary" asp-controller="Quiz" asp-action="Index">Back to Home</a>
+</div>

@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "9p7JbX+aF35Vm6tvt9KRu99o+fgvkwT7zUw2Q2iRmEIflY4Mo7fMLG3N69IhGE4q7J6QbXrDBAYtLnuzGsalag==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\egert\\RiderProjects\\icd0009-2020s\\Exam\\Extensions.Base\\Extensions.Base.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\egert\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\egert\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.11.0\\microsoft.identitymodel.jsonwebtokens.6.11.0.nupkg.sha512",
+    "C:\\Users\\egert\\.nuget\\packages\\microsoft.identitymodel.logging\\6.11.0\\microsoft.identitymodel.logging.6.11.0.nupkg.sha512",
+    "C:\\Users\\egert\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.11.0\\microsoft.identitymodel.tokens.6.11.0.nupkg.sha512",
+    "C:\\Users\\egert\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.11.0\\system.identitymodel.tokens.jwt.6.11.0.nupkg.sha512",
+    "C:\\Users\\egert\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

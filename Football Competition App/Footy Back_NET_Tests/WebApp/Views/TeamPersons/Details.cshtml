@@ -1,0 +1,44 @@
+@model PublicApi.DTO.v1.TeamPerson
+
+@{
+    //ViewData["Title"] = @Base.Resources.Views.Shared.Basic.Details;
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TeamPerson</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.Team)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.Team!.Name)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.Person)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.Person!.Name)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.Role)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.Role!.Name)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.Since)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.Since)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.Until)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.Until)
+        </dd>
+    </dl>
+</div>

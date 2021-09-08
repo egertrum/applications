@@ -1,0 +1,28 @@
+@model WebApp.ViewModels.Teams.TeamCreateEditDetailsViewModel
+
+@{
+    //ViewData["Title"] = Model.Team.Name;
+}
+
+<div>
+    <partial name="_DetailsDelete" model="Model.Team"/>
+</div>
+@if(Model.BelongsToUser){
+    <h6>
+        <a asp-action="Edit" asp-route-id="@Model.Team.Id">@Base.Resources.Views.Shared.Basic.Edit</a>
+    </h6>   
+}
+
+<hr />
+<h4 class="text-center">@Base.Resources.DTO.v1.Team.TeamMembers</h4>
+@if(Model.BelongsToUser){
+    <p class="text-center">
+        <a class="text-dark" asp-controller="TeamPersons" asp-action="Create" asp-route-id="@Model.Team.Id">@Base.Resources.DTO.v1.TeamPerson.AddTeamMember
+            <img class="extra-small-icon" src="~/js/images/right-arrow.png" alt=""/></a>
+    </p>
+}
+<div class="row-cols-1">
+    <div class="text-center">
+        <partial name="_DetailsTeamPersons" model="Model"/>
+    </div>
+</div>

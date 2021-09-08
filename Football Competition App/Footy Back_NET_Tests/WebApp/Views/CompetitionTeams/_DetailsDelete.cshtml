@@ -1,0 +1,20 @@
+﻿@model PublicApi.DTO.v1.CompetitionTeam
+
+<dt class = "col-sm-4">
+    @Html.DisplayNameFor(model => model.Team)
+</dt>
+<dd class = "col-sm-8">
+    @Html.DisplayFor(model => model.Team!.Name)
+</dd>
+<dt class = "col-sm-4">
+    @Html.DisplayNameFor(model => model.Competition)
+</dt>
+<dd class = "col-sm-8">
+    @Html.DisplayFor(model => model.Competition!.Name)
+</dd>
+<dt class = "col-sm-4">
+    @Html.DisplayNameFor(model => model.Since)
+</dt>
+<dd class = "col-sm-8">
+    @Html.DisplayFor(model => model.Since)
+</dd>

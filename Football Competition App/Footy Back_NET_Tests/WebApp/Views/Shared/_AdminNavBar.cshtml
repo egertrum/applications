@@ -1,0 +1,55 @@
+﻿
+<div class="topbar-divider d-none d-sm-block"></div>
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <img class="very-small-icon" src="~/js/images/database.png" alt=""/>
+        @Base.Resources.Areas.Admin.AdminNavBar.Database
+    </a>
+    <div class="dropdown-menu dropdown-menu-right animated--grow-in" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" asp-area="Admin" asp-controller="Users" asp-action="Index">@Base.Resources.Areas.Admin.AdminNavBar.Users</a>
+        <a class="dropdown-item" asp-area="Admin" asp-controller="Roles" asp-action="Index">@Base.Resources.Areas.Admin.AdminNavBar.Roles</a>
+        <hr class="dropdown-divider"/>
+        <a class="dropdown-item" asp-area="" asp-controller="Competitions" asp-action="Index">@Base.Resources.Areas.Admin.AdminNavBar.Competitions</a>
+        <a class="dropdown-item" asp-area="" asp-controller="CompetitionTeams" asp-action="Index">@Base.Resources.Areas.Admin.AdminNavBar.CompetitionTeams</a>
+        <hr class="dropdown-divider"/>
+        <a class="dropdown-item" asp-area="" asp-controller="GameParts" asp-action="Index">@Base.Resources.Areas.Admin.AdminNavBar.GameParts</a>
+        <a class="dropdown-item" asp-area="" asp-controller="GamePartTypes" asp-action="Index">@Base.Resources.Areas.Admin.AdminNavBar.GamePartTypes</a>
+        <a class="dropdown-item" asp-area="" asp-controller="GameTypes" asp-action="Index">@Base.Resources.Areas.Admin.AdminNavBar.GameTypes</a>
+        <a class="dropdown-item" asp-area="" asp-controller="Games" asp-action="Index">@Base.Resources.Areas.Admin.AdminNavBar.Games</a>
+        <hr class="dropdown-divider"/>
+        <a class="dropdown-item" asp-area="" asp-controller="Countries" asp-action="Index">@Base.Resources.Areas.Admin.AdminNavBar.Countries</a>
+        <a class="dropdown-item" asp-area="" asp-controller="PersonRoles" asp-action="Index">@Base.Resources.Areas.Admin.AdminNavBar.PersonRoles</a>
+        <a class="dropdown-item" asp-area="" asp-controller="Persons" asp-action="Index">@Base.Resources.Areas.Admin.AdminNavBar.Persons</a>
+        <a class="dropdown-item" asp-area="" asp-controller="Registrations" asp-action="Index">@Base.Resources.Areas.Admin.AdminNavBar.Registrations</a>
+        <a class="dropdown-item" asp-area="" asp-controller="TeamPersons" asp-action="Index">@Base.Resources.Areas.Admin.AdminNavBar.TeamPersons</a>
+        <a class="dropdown-item" asp-area="" asp-controller="Teams" asp-action="Index">@Base.Resources.Areas.Admin.AdminNavBar.Teams</a>
+    </div>
+</li>
+
+<div class="topbar-divider d-none d-sm-block"></div>
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <img class="very-small-icon" src="~/js/images/database.png" alt=""/>
+        @Base.Resources.Areas.Admin.AdminNavBar.Permissions
+    </a>
+    <div class="dropdown-menu dropdown-menu-right animated--grow-in" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" asp-area="" asp-controller="Competitions" asp-action="Index">Users</a>
+        <a class="dropdown-item" asp-area="" asp-controller="Roles" asp-action="Index">Roles</a>
+        <hr class="dropdown-divider"/>
+        <a class="dropdown-item" asp-area="" asp-controller="Competitions" asp-action="Index">Competitions</a>
+        <a class="dropdown-item" asp-area="" asp-controller="CompetitionTeams" asp-action="Index">CompetitionTeams</a>
+        <hr class="dropdown-divider"/>
+        <a class="dropdown-item" asp-area="" asp-controller="GameParts" asp-action="Index">GameParts</a>
+        <a class="dropdown-item" asp-area="" asp-controller="GamePartTypes" asp-action="Index">GamePartTypes</a>
+    </div>
+</li>
+
+<div class="topbar-divider d-none d-sm-block"></div>
+
+<li class="nav-item text-dark">
+    <a class="nav-link text-dark" asp-area="" asp-controller="Reports" asp-action="Index">
+        <img class="very-small-icon" src="~/js/images/report.png" alt=""/>
+        @Base.Resources.Areas.Admin.AdminNavBar.Reports
+    </a>
+</li>

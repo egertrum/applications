@@ -1,0 +1,75 @@
+﻿@model WebApp.ViewModels.Competitions.CompetitionIndexViewModel
+
+@{
+    //ViewData["Title"] = "Index";
+}
+
+<h4 style="text-align: center">Competitions</h4>
+
+
+@if (User.Identity?.IsAuthenticated ?? false){
+    <p>
+        <a asp-controller="Competitions" asp-action="Create">Create New</a>
+    </p>
+}
+
+@if (User.Identity?.IsAuthenticated ?? false){
+    <p>
+        <a asp-controller="Competitions" asp-action="MyIndex">View my competitions</a>
+    </p>
+}
+
+@if (Model.Error != null){
+    <h4 style="text-align: center; color: red">@Model.Error</h4>
+}
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                Country
+            </th>
+            <th>
+                Competition Name
+            </th>
+            <th>
+                Organiser
+            </th>
+            <th>
+            </th>
+            <th>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Competitions) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country!.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Organiser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comment)
+            </td>
+            <td>
+                @Model.UserCompetitions
+            </td>
+            <td>
+                <a asp-controller="Competitions" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                @if (Model.UserCompetitions){
+                    <text> | </text>
+                    <a asp-controller="Competitions" asp-action="Edit" asp-route-id="@item.Id">Edit</a>  
+                    <text> | </text>
+                    <a asp-controller="Competitions" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

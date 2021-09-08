@@ -1,0 +1,26 @@
+﻿@model WebApp.ViewModels.Teams.TeamCreateEditDetailsViewModel
+
+<p class="redStar">@Base.Resources.Views.Shared.Basic.RequiredField</p>
+<div class="form-group">
+    <div>
+        <label asp-for="Team.CountryId" class="control-label"></label> *
+    </div>
+    <select asp-for="Team.CountryId" class="form-control" asp-items="Model.CountrySelectList">
+        <option value="@null">@Base.Resources.Views.Shared.Basic.SelectOption</option>
+    </select>
+    <span asp-validation-for="Team.CountryId" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <div>
+        <label asp-for="Team.Name" class="control-label"></label> *
+    </div>
+    <input asp-for="Team.Name" class="form-control" />
+    <span asp-validation-for="Team.Name" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <div>
+        <label asp-for="Team.PlayersAmount" class="control-label"></label> *
+    </div>
+    <input asp-for="Team.PlayersAmount" class="form-control" />
+    <span asp-validation-for="Team.PlayersAmount" class="text-danger"></span>
+</div>

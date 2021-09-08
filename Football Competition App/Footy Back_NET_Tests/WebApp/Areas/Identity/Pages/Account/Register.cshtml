@@ -1,0 +1,118 @@
+@page
+@model RegisterModel
+@{
+    ViewData["Title"] = @Base.Resources.Areas.Identity.Pages.Account.Register.PageTitle;
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-route-returnUrl="@Model.ReturnUrl" method="post" id="register-form">
+            <h4>@Base.Resources.Areas.Identity.Pages.Account.Register.CreateNewAccount</h4>
+            <hr/>
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Input.Email"></label>
+                <input asp-for="Input.Email" class="form-control"/>
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.Password"></label>
+                <input asp-for="Input.Password" class="form-control"/>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.ConfirmPassword"></label>
+                <input asp-for="Input.ConfirmPassword" class="form-control"/>
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.CountryId" class="control-label"></label>
+                <select asp-for="Input.CountryId" class="form-control" asp-items="ViewBag.Countries">
+                    <option value="@null">@Base.Resources.Views.Shared.Basic.SelectOption</option>
+                </select>
+                <span asp-validation-for="Input.CountryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.BirthDate" class="control-label"></label>
+                <input asp-for="Input.BirthDate" class="form-control"/>
+                <span asp-validation-for="Input.BirthDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.FirstName"></label>
+                <input asp-for="Input.FirstName" class="form-control"/>
+                <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.LastName"></label>
+                <input asp-for="Input.LastName" class="form-control"/>
+                <span asp-validation-for="Input.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.IdentificationCode" class="control-label"></label>
+                <input asp-for="Input.IdentificationCode" class="form-control"/>
+                <span asp-validation-for="Input.IdentificationCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.Gender" class="control-label"></label>
+                <select class="custom-select mr-sm-2" asp-for="Input.Gender">
+                    <option selected>@Base.Resources.Views.Shared.Basic.Choose</option>
+                    <option value="Man">@Base.Resources.Views.Shared.Basic.Man</option>
+                    <option value="Woman">@Base.Resources.Views.Shared.Basic.Woman</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">@Base.Resources.Areas.Identity.Pages.Account.Register.ButtonRegister</button>
+        </form>
+    </div>
+    <div class="col-md-6 col-md-offset-2">
+        <section>
+            <h4>@Base.Resources.Areas.Identity.Pages.Account.Register.Register3rdParty</h4>
+            <hr/>
+            @{
+                if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                {
+                    <div>
+                        <p>
+                            @Base.Resources.Areas.Identity.Pages.Account.Register.Register3rdPartyNotConfigured
+                        </p>
+                    </div>
+                }
+                else
+                {
+                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                        <div>
+                            <p>
+                                @foreach (var provider in Model.ExternalLogins!)
+                                {
+                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                }
+                            </p>
+                        </div>
+                    </form>
+                }
+            }
+        </section>
+        @if (Model.PasswordRequirements != null)
+        {
+            <div id="password-tooltip" class="d-none">
+                <partial name="_PasswordRequirementsTooltip" model="Model.PasswordRequirements"/>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial"/>
+    <script>
+        $(function () {        
+            $('.tip').each(function (){
+              $(this).tooltip({
+                html: true,
+                title: $('#' + $(this).data('tip')).html(),
+                placement: 'top'
+              });     
+            });
+        })
+        </script>
+}

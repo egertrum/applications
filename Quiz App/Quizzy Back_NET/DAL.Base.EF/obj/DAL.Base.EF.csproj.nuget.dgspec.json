@@ -1,0 +1,197 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\egert\\RiderProjects\\icd0009-2020s\\Exam\\DAL.Base.EF\\DAL.Base.EF.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\egert\\RiderProjects\\icd0009-2020s\\Exam\\Contracts.Domain.Base\\Contracts.Domain.Base.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\egert\\RiderProjects\\icd0009-2020s\\Exam\\Contracts.Domain.Base\\Contracts.Domain.Base.csproj",
+        "projectName": "Contracts.Domain.Base",
+        "projectPath": "C:\\Users\\egert\\RiderProjects\\icd0009-2020s\\Exam\\Contracts.Domain.Base\\Contracts.Domain.Base.csproj",
+        "packagesPath": "C:\\Users\\egert\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\egert\\RiderProjects\\icd0009-2020s\\Exam\\Contracts.Domain.Base\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\egert\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\egert\\RiderProjects\\icd0009-2020s\\Exam\\DAL.Base.EF\\DAL.Base.EF.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\egert\\RiderProjects\\icd0009-2020s\\Exam\\DAL.Base.EF\\DAL.Base.EF.csproj",
+        "projectName": "DAL.Base.EF",
+        "projectPath": "C:\\Users\\egert\\RiderProjects\\icd0009-2020s\\Exam\\DAL.Base.EF\\DAL.Base.EF.csproj",
+        "packagesPath": "C:\\Users\\egert\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\egert\\RiderProjects\\icd0009-2020s\\Exam\\DAL.Base.EF\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\egert\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\egert\\RiderProjects\\icd0009-2020s\\Exam\\Contracts.Domain.Base\\Contracts.Domain.Base.csproj": {
+                "projectPath": "C:\\Users\\egert\\RiderProjects\\icd0009-2020s\\Exam\\Contracts.Domain.Base\\Contracts.Domain.Base.csproj"
+              },
+              "C:\\Users\\egert\\RiderProjects\\icd0009-2020s\\Exam\\Domain.Base\\Domain.Base.csproj": {
+                "projectPath": "C:\\Users\\egert\\RiderProjects\\icd0009-2020s\\Exam\\Domain.Base\\Domain.Base.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\egert\\RiderProjects\\icd0009-2020s\\Exam\\Domain.Base\\Domain.Base.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\egert\\RiderProjects\\icd0009-2020s\\Exam\\Domain.Base\\Domain.Base.csproj",
+        "projectName": "Domain.Base",
+        "projectPath": "C:\\Users\\egert\\RiderProjects\\icd0009-2020s\\Exam\\Domain.Base\\Domain.Base.csproj",
+        "packagesPath": "C:\\Users\\egert\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\egert\\RiderProjects\\icd0009-2020s\\Exam\\Domain.Base\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\egert\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\egert\\RiderProjects\\icd0009-2020s\\Exam\\Contracts.Domain.Base\\Contracts.Domain.Base.csproj": {
+                "projectPath": "C:\\Users\\egert\\RiderProjects\\icd0009-2020s\\Exam\\Contracts.Domain.Base\\Contracts.Domain.Base.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

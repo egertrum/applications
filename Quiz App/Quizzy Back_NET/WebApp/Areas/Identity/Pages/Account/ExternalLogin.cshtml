@@ -1,0 +1,39 @@
+﻿@page
+@using Resources.Areas.Identity.Pages.Account
+@model ExternalLoginModel
+@{
+    ViewData["Title"] = ExternalLogin.Register;
+}
+
+<h1>@ViewData["Title"]</h1>
+<h4 id="external-login-title">@Html.Raw(string.Format(ExternalLogin.AssociateAccount,Model.ProviderDisplayName))</h4>
+<hr />
+
+<p id="external-login-description" class="text-info">
+   @Html.Raw(string.Format(ExternalLogin.AssociateAccountHelp,Model.ProviderDisplayName))
+</p>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-page-handler="Confirmation" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <label class="text-danger">* - @ExternalLogin.Mandatory</label>
+            <div class="form-group">
+                <label asp-for="Input.Email"></label>*
+                <input asp-for="Input.Email" class="form-control" />
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.FirstName"></label>*
+                <input asp-for="Input.FirstName" class="form-control" />
+                <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.LastName"></label>*
+                <input asp-for="Input.LastName" class="form-control" />
+                <span asp-validation-for="Input.LastName" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">@ExternalLogin.Register</button>
+        </form>
+    </div>
+</div>

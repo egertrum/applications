@@ -1,0 +1,36 @@
+﻿
+
+<div class="topbar-divider d-none d-sm-block"></div>
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Questions
+    </a>
+    <div class="dropdown-menu dropdown-menu-right animated--grow-in" aria-labelledby="navbarDropdown1">
+        <a class="dropdown-item" asp-area="" asp-controller="Question" asp-action="Index">All Questions</a>
+        <a class="dropdown-item" asp-area="" asp-controller="QuestionAnswer" asp-action="Index">All Answers</a>
+        <hr class="dropdown-divider"/>
+        <a class="dropdown-item" asp-area="" asp-controller="Question" asp-action="Create">Add new Question</a>
+        <a class="dropdown-item" asp-area="" asp-controller="QuestionAnswer" asp-action="Create">Add Answers to Questions</a>
+    </div>
+</li>
+
+<div class="topbar-divider d-none d-sm-block"></div>
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Quizzes and Polls
+    </a>
+    <div class="dropdown-menu dropdown-menu-right animated--grow-in" aria-labelledby="navbarDropdown2">
+        <a class="dropdown-item" asp-area="" asp-controller="Quiz" asp-action="Index">Quizzes</a>
+        <a class="dropdown-item" asp-area="" asp-controller="Quiz" asp-action="Create">Create new Quiz</a>
+        <a class="dropdown-item" asp-area="" asp-controller="QuizQuestion" asp-action="Create">Add questions to Quizes</a>
+        <hr class="dropdown-divider"/>
+        <a class="dropdown-item" asp-area="" asp-controller="Poll" asp-action="Index">Polls</a>
+        <a class="dropdown-item" asp-area="" asp-controller="Poll" asp-action="Create">Create new Poll</a>
+        <a class="dropdown-item" asp-area="" asp-controller="PollQuestion" asp-action="Create">Add questions to Polls</a>
+    </div>
+</li>
+
+
+

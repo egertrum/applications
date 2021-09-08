@@ -1,0 +1,25 @@
+﻿@page
+@using Resources.Areas.Identity.Pages.Account.Manage
+@model Disable2faModel
+@{
+    ViewData["Title"] = Disable2fa.DisableTwoFactorAuthentication;
+    ViewData["ActivePage"] = ManageNavPages.TwoFactorAuthentication;
+}
+
+<partial name="_StatusMessage" for="StatusMessage" />
+<h2>@ViewData["Title"]</h2>
+
+<div class="alert alert-warning" role="alert">
+    <p>
+        <strong>@Disable2fa.OnlyDisables2FA</strong>
+    </p>
+    <p>
+        @Disable2fa.Disabling2FAExplanation <a asp-page="./ResetAuthenticator">@Disable2fa.ResetYourAuthenticatorKeys</a>
+    </p>
+</div>
+
+<div>
+    <form method="post" class="form-group">
+        <button class="btn btn-danger" type="submit">@Disable2fa.Disable2FASubmit</button>
+    </form>
+</div>

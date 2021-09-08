@@ -1,0 +1,36 @@
+@model WebApp.ViewModels.UserAnswer.UserAnswerCreateViewModel
+
+<h4 class="text-center">@Model.Question</h4>
+<hr/>
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Question"/>
+            <input type="hidden" asp-for="Poll"/>
+            <input type="hidden" asp-for="QuizId"/>
+            <input type="hidden" asp-for="QuizUniqueId"/>
+            <input type="hidden" asp-for="NextNumber"/>
+            @foreach (var answer in Model.QuestionAnswersSelectList!)
+            {
+                <div class="form-check">
+                    @Html.RadioButtonFor(model => model.UserAnswer.QuestionAnswerId, answer.Value)
+                    <label asp-for="UserAnswer.QuestionAnswerId" class="form-check-label">@answer.Text</label>
+                </div>
+                <hr/>
+            }
+            @{
+                var btnValue = "Next Question";
+            }
+            @if (Model.LastQuestion)
+            {
+                btnValue = "Submit";
+            }
+            <div class="form-group text-center">
+                <input type="submit" value="@btnValue" class="btn btn-primary"/>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+</div>

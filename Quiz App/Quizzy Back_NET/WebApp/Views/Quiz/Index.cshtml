@@ -1,0 +1,85 @@
+@model WebApp.ViewModels.Quiz.QuizIndexViewModel
+
+<h1 class="text-center">Quizes</h1>
+
+@if (Model.Error != null)
+{
+    <p class="text-center errorClass">@Model.Error</p>
+}
+
+@if (User.IsInRole("Admin"))
+{
+    <p class="text-center">
+        <a class="text-dark" asp-action="Create">
+            Add new Quiz
+            <img class="extra-small-icon" src="~/js/images/right-arrow.png" alt=""/>
+        </a>
+    </p>
+}
+<table class="table table-hover">
+    <thead>
+    <tr class="text-center">
+        <th>
+            Question
+        </th>
+        <th>
+            Average result
+        </th>
+        <th>
+            Passing percent (Answerers who got more than 50% right)
+        </th>
+        <th>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Quizzes)
+    {
+        <tr class="text-center">
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @if (item.Average != null)
+                {
+                    @Html.DisplayFor(modelItem => item.Average)
+                    @Html.Raw(" / ")
+                    @Html.DisplayFor(modelItem => item.MaxPoints)
+                }
+                else
+                {
+                    @Html.Raw("")
+                }
+            </td>
+            <td>
+                @if (item.PassingProc != null)
+                {
+                    @Html.DisplayFor(modelItem => item.PassingProc)
+                    @Html.Raw("%")
+                }
+                else
+                {
+                    @Html.Raw("")
+                }
+            </td>
+            @if (User.IsInRole("Admin"))
+            {
+                <td>
+                    <a class="text-dark" asp-action="Details" asp-route-id="@item.Id">Info</a> |
+                    <a class="text-dark" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a class="text-dark" asp-controller="QuizQuestion" asp-action="Create" asp-route-quizId="@item.Id">Add Question</a> |
+                    <a class="text-dark" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            }
+            else
+            {
+                <td>
+                    <a class="btn btn-info" asp-controller="UserAnswer" asp-action="Create" asp-route-id="@item.Id" asp-route-number="1">
+                        Take Quiz
+                    </a>
+                </td>
+            }
+        </tr>
+    }
+    </tbody>
+</table>

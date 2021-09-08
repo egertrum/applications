@@ -1,0 +1,32 @@
+@model Domain.App.QuizQuestion
+
+<h3 class="text-center">Are you sure you want to remove this question from that quiz?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Quiz)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Quiz!.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Question)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Question!.Value)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Number)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Number)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-controller="Quiz" asp-action="Index">Back to Quizzes</a>
+    </form>
+</div>

@@ -1,0 +1,93 @@
+@model WebApp.ViewModels.Competitions.CompetitionIndexViewModel
+
+@{
+    //ViewData["Title"] = Base.Resources.Views.Shared._Layout.Competitions;
+}
+
+<h4 class="text-center">@if (!Model.UserCompetitions)
+                        {
+                            @Base.Resources.DTO.v1.Competition.Competitions   
+                        }
+                        else
+                        {
+                            @Base.Resources.DTO.v1.Competition.MyCompetitions
+                        }</h4>
+
+
+@if ((User.Identity?.IsAuthenticated ?? false) && !Model.UserCompetitions){
+    <p class="text-center">
+        <a class="text-dark" asp-action="MyIndex">@Base.Resources.DTO.v1.Competition.CompetitionsOrganisedByMe
+            <img class="extra-small-icon" src="~/js/images/right-arrow.png" alt=""/></a>
+    </p>
+}
+
+@if (Model.Error != null){
+    <h4 style="text-align: center; color: red">@Model.Error</h4>
+}
+
+@if (Model.Message != null){
+    <h4 style="text-align: center; color: green">@Model.Message</h4>
+}
+
+@if (!Model.UserCompetitions)
+{
+    <partial name="_IndexSearchBar" model="Model"/>
+}
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Base.Resources.DTO.v1.Competition.Name
+            </th>
+            <th>
+            </th>
+            <th>
+                @Base.Resources.DTO.v1.Competition.Date
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="competitions">
+@foreach (var item in Model.Competitions) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <img class="very-small-icon" src="~/js/images/pin.png" alt=""/>
+                @Html.DisplayFor(modelItem => item.Country!.Name)
+            </td>
+            <td>
+                @if (item.EndDate != null)
+                {
+                    @Html.Raw(item.StartDate.ToShortDateString() + " - " + item.EndDate.Value.ToShortDateString())
+                }
+                else
+                {
+                    @Html.DisplayFor(modelItem => item.StartDate)   
+                }
+            </td>
+            <td>
+                @if (User.Identity?.IsAuthenticated ?? false)
+                    {
+                        <a asp-controller="CompetitionTeams" asp-action="Create" asp-route-compId="@item.Id" class="text-dark">
+                             @Base.Resources.Views.Shared.Basic.Register
+                        </a>
+                        <text> | </text>
+                    }
+                <a id="c-details" asp-action="Details" asp-route-id="@item.Id" class="text-dark">@Base.Resources.Views.Shared.Basic.MoreInfo</a>
+                @if (User.IsInRole("Admin") || (User.Identity?.IsAuthenticated ?? false) && Model.UserCompetitions)
+                {
+                    <text> | </text>
+                    <a asp-controller="Games" asp-action="Create" asp-route-competitionId="@item.Id" class="text-dark">@Base.Resources.DTO.v1.Game.AddGame</a>
+                    <text> | </text>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="text-dark">@Base.Resources.Views.Shared.Basic.Edit</a>
+                    <text> | </text>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="text-dark">@Base.Resources.Views.Shared.Basic.Delete</a>
+                }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

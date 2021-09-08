@@ -1,0 +1,44 @@
+﻿@model WebApp.ViewModels.Competitions.CompetitionCreateEditViewModel
+
+<p class="redStar">@Base.Resources.Views.Shared.Basic.RequiredField</p>
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="form-group">
+    <div>
+        <label class="control-label">@Base.Resources.DTO.v1.Competition.CountryId</label> *
+    </div>
+    <select asp-for="Competition.CountryId" class="form-control" asp-items="Model.CountrySelectList">
+        <option value="@null">@Base.Resources.Views.Shared.Basic.SelectOption</option>
+    </select>
+    <span asp-validation-for="Competition.CountryId" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <div>
+        <label asp-for="Competition.Name" class="control-label"></label> *
+    </div>
+    <input asp-for="Competition.Name" class="form-control"/>
+    <span asp-validation-for="Competition.Name" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <div>
+        <label asp-for="Competition.Organiser" class="control-label"></label> *
+    </div>
+    <input asp-for="Competition.Organiser" class="form-control"/>
+    <span asp-validation-for="Competition.Organiser" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <div>
+        <label asp-for="Competition.StartDate" class="control-label"></label> *
+    </div>
+    <input asp-for="Competition.StartDate" class="form-control"/>
+    <span asp-validation-for="Competition.StartDate" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Competition.EndDate" class="control-label"></label>
+    <input asp-for="Competition.EndDate" class="form-control"/>
+    <span asp-validation-for="Competition.EndDate" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Competition.Comment" class="control-label"></label>
+    <textarea asp-for="Competition.Comment" class="form-control"></textarea>
+    <span asp-validation-for="Competition.Comment" class="text-danger"></span>
+</div>

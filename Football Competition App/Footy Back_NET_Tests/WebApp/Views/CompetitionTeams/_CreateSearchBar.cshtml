@@ -1,0 +1,23 @@
+﻿@model WebApp.ViewModels.CompetitionTeams.CompetitionTeamCreateEditViewModel
+
+<hr />
+<div class="col-md-4">
+    <form asp-action="Create" method="get">
+        <div class="form-group">
+            <div class="row">
+                <div class="col">
+                    <label class="control-label">@Base.Resources.DTO.v1.CompetitionTeam.SortByCountry</label>
+                    <select asp-for="countryId" name="countryId" class="form-control" asp-items="Model.CountrySelectList">
+                        <option></option>
+                    </select>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 3%">
+                <div class="form-group">
+                    <input type="submit" value="@Base.Resources.Views.Shared.Basic.Search" class="btn btn-primary"/>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<hr />

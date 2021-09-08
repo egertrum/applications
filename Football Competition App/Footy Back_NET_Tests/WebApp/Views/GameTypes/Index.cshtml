@@ -1,0 +1,40 @@
+@model IEnumerable<PublicApi.DTO.v1.GameType>
+
+@{
+    //ViewData["Title"] = @Base.Resources.DTO.v1.GameType.GameTypes;
+}
+
+<h4 class="text-center">@Base.Resources.DTO.v1.GameType.GameTypes</h4>
+
+<p>
+    <a asp-action="Create">@Base.Resources.Views.Shared.Basic.CreateNew</a>
+</p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Calling)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Calling)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">@Base.Resources.Views.Shared.Basic.Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">@Base.Resources.Views.Shared.Basic.Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

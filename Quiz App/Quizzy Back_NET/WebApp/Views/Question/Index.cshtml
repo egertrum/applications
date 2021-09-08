@@ -1,0 +1,42 @@
+@model WebApp.ViewModels.Question.QuestionIndexViewModel
+
+<h1 class="text-center">Questions</h1>
+
+@if (Model.Error != null)
+{
+    <p class="text-center" style="color: red">@Model.Error</p>
+}
+
+<p class="text-center">
+    <a class="text-dark" asp-action="Create">
+        Add new Question
+        <img class="extra-small-icon" src="~/js/images/right-arrow.png" alt=""/>
+    </a>
+</p>
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>
+            Question
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Questions)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Value)
+            </td>
+            <td>
+                <a class="text-dark" asp-controller="QuestionAnswer" asp-action="Index" asp-route-id="@item.Id">Answers</a> |
+                <a class="text-dark" asp-controller="QuizQuestion" asp-action="Create" asp-route-questionId="@item.Id">Add to Quiz</a> |
+                <a class="text-dark" asp-controller="QuestionAnswer" asp-action="Create" asp-route-questionId="@item.Id">Add Answers</a> |
+                <a class="text-dark" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a class="text-dark" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

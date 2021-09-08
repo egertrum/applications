@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="AddGame" xml:space="preserve">
+        <value>Add game</value>
+    </data>
+    <data name="DbGame" xml:space="preserve">
+        <value>Game</value>
+    </data>
+    <data name="Competition" xml:space="preserve">
+        <value>Competition</value>
+    </data>
+    <data name="KickOffTime" xml:space="preserve">
+        <value>Kickoff time</value>
+    </data>
+    <data name="Score" xml:space="preserve">
+        <value>Score</value>
+    </data>
+    <data name="Comment" xml:space="preserve">
+        <value>Comment</value>
+    </data>
+    <data name="OrganiserGames" xml:space="preserve">
+        <value>Games from my competitions</value>
+    </data>
+    <data name="TeamManagerGames" xml:space="preserve">
+        <value>My teams at games</value>
+    </data>
+    <data name="AdminGames" xml:space="preserve">
+        <value>All games</value>
+    </data>
+    <data name="Games" xml:space="preserve">
+        <value>Games</value>
+    </data>
+    <data name="IfExtraTimeOrPenalties" xml:space="preserve">
+        <value>if you did not choose game type to be "Two halves"</value>
+    </data>
+    <data name="SureDeleteThis" xml:space="preserve">
+        <value>Are you sure you want to delete this game?</value>
+    </data>
+    <data name="HomeId" xml:space="preserve">
+        <value>Home team</value>
+    </data>
+    <data name="AwayId" xml:space="preserve">
+        <value>Away team</value>
+    </data>
+    <data name="GameTypeId" xml:space="preserve">
+        <value>Game type</value>
+    </data>
+    <data name="HalfLength" xml:space="preserve">
+        <value>Half length (min)</value>
+    </data>
+    <data name="ExtraTimeHalfLength" xml:space="preserve">
+        <value>Extra time half length (min)</value>
+    </data>
+    <data name="HomeScore" xml:space="preserve">
+        <value>Home score</value>
+    </data>
+    <data name="AwayScore" xml:space="preserve">
+        <value>Away score</value>
+    </data>
+    <data name="ExtraTimeError" xml:space="preserve">
+        <value>The Extra time half length is required.</value>
+    </data>
+</root>

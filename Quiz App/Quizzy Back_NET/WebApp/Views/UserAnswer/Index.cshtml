@@ -1,0 +1,34 @@
+@model IEnumerable<Domain.App.UserAnswer>
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AppUser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuestionAnswer)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppUser!.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuestionAnswer!.Value)
+            </td>
+            <td>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

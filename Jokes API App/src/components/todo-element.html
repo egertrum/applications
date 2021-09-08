@@ -1,0 +1,9 @@
+<li class="${item.done ? 'completed' : ''}">
+    <div class="form-check">
+        <label class="form-check-label">
+            <input checked.bind="item.done" class="checkbox" type="checkbox">${item.description}
+            <i class="input-helper"></i>
+        </label>
+    </div>
+    <i click.delegate="removeTodo(todoNo)" class="remove mdi mdi-close-circle-outline"></i>
+</li>

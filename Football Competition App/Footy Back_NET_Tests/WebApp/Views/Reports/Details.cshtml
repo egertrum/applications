@@ -1,0 +1,32 @@
+@model PublicApi.DTO.v1.Report
+
+@{
+    //ViewData["Title"] = Base.Resources.Views.Shared.Basic.Details;
+}
+
+<h4>@Base.Resources.Views.Shared.Basic.Details</h4>
+
+<div>
+    <hr />
+        <dl class="row">
+            <dt class = "col-sm-4">
+                @Html.DisplayNameFor(model => model.Submitter)
+            </dt>
+            <dd class="col-sm-8">
+                <!--Model.AppUser != null ? Model.AppUser.FullName : "Anonymous"-->
+                @Html.DisplayFor(model => model.Submitter)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.Comment)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.Comment)
+            </dd>
+        </dl>
+</div>

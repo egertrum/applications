@@ -1,0 +1,41 @@
+@model WebApp.ViewModels.QuestionAnswer.QuestionAnswerCreateViewModel
+
+
+<h1 class="text-center">Add new answer to Question</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Question</label>
+                <select asp-for="QuestionAnswer.QuestionId" class="form-control" asp-items="@Model.QuestionsSelectList">
+                    <option value="@null">---Please select---</option>
+                </select>
+                <span asp-validation-for="QuestionAnswer.QuestionId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QuestionAnswer.Value" class="control-label"></label>
+                <input asp-for="QuestionAnswer.Value" class="form-control" />
+                <span asp-validation-for="QuestionAnswer.Value" class="text-danger"></span>
+            </div>
+            @if (Model.PollQuestion == null)
+            {
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="QuestionAnswer.True" /> Correct answer
+                    </label>
+                </div>   
+            }
+            <div class="form-group">
+                <input type="submit" value="Add" class="btn btn-primary" />
+                <input type="submit" asp-route-add="add" value="Add new Answer" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

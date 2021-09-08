@@ -1,0 +1,44 @@
+﻿@model IEnumerable<PublicApi.DTO.v1.CompetitionTeam>
+
+
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>
+        </th>
+        <th>
+            @Base.Resources.DTO.v1.CompetitionTeam.Team
+        </th>
+        <th>
+            @Base.Resources.DTO.v1.Team.PlayersAmount
+        </th>
+        <th>
+            @Base.Resources.DTO.v1.CompetitionTeam.RegisteredAt
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody id="attending-teams">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img class="very-small-icon" src="~/js/images/pin.png" alt=""/>
+                @Html.DisplayFor(modelItem => item.Team!.Country!.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Team!.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Team!.PlayersAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Since)
+            </td>
+            <td>
+                <a asp-controller="Teams" asp-action="Details" asp-route-id="@item.Team!.Id" class="text-dark">@Base.Resources.Views.Shared.Basic.MoreInfo</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

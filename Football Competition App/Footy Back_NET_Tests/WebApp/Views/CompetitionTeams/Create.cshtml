@@ -1,0 +1,31 @@
+@model WebApp.ViewModels.CompetitionTeams.CompetitionTeamCreateEditViewModel
+
+@{
+    //ViewData["Title"] = Base.Resources.Views.Shared.Basic.Register;
+}
+
+<h4 class="text-center">@Base.Resources.DTO.v1.CompetitionTeam.RegisterToCompetition</h4>
+
+@if (Model.Error != null)
+{
+    <p class="errorClass">@Model.Error</p>    
+}
+<div class="text-center">
+    <partial name="_CreateSearchBar" model="Model"/>
+</div>
+<p class="redStar">@Base.Resources.Views.Shared.Basic.RequiredField</p>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <partial name="_CreateEdit" model="Model"/>
+            <div class="form-group">
+                <input type="submit" value="@Base.Resources.Views.Shared.Basic.Register" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

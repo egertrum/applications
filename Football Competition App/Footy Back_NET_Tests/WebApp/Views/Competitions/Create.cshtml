@@ -1,0 +1,51 @@
+@model WebApp.ViewModels.Competitions.CompetitionCreateEditViewModel
+
+@{
+    //ViewData["Title"] = Base.Resources.Views.Shared.Basic.Add;
+}
+
+<h4 class="text-center">@Base.Resources.DTO.v1.Competition.DBCompetition</h4>
+<hr/>
+<div class="row">
+    <div class="col-md-4">
+        <div class="card shadow">
+            <!-- Card Header - Accordion -->
+            <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse" aria-expanded="true" aria-controls="collapseCardExample">
+                <h6 class="m-0 font-weight-light text-dark">
+                    <img class="very-small-icon" src="~/js/images/information.png" alt=""/>
+                     @Base.Resources.DTO.v1.Competition.AboutOrganising
+                    </h6>
+            </a>
+            <!-- Card Content - Collapse -->
+            <div class="collapse" id="collapseCardExample" style="">
+                <div class="card-body">
+                    <div>
+                        @Base.Resources.DTO.v1.Competition.OrganiserInfo
+                    </div>
+                    <div>
+                        @Base.Resources.DTO.v1.Competition.DateInfo
+                    </div>
+                    <div>
+                        @Base.Resources.DTO.v1.Competition.ElseInfo
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr/>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <partial name="_CreateEdit" model="Model"/>
+            <div class="form-group">
+                <input type="submit" value="@Base.Resources.Views.Shared.Basic.Create" class="btn btn-primary"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

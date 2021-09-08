@@ -1,0 +1,49 @@
+﻿@model WebApp.ViewModels.Persons.PersonCreateEditViewModel
+
+<p class="redStar">@Base.Resources.Views.Shared.Basic.RequiredField</p>
+
+<div class="form-group">
+    <div>
+        <label asp-for="Person.CountryId" class="control-label"></label> *
+    </div>
+    <select asp-for="Person.CountryId" class="form-control" asp-items="Model.CountrySelectList">
+        <option value="@null">@Base.Resources.Views.Shared.Basic.SelectOption</option>
+    </select>
+    <span asp-validation-for="Person.CountryId" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <div>
+        <label asp-for="Person.FirstName" class="control-label"></label> *
+    </div>
+    <input asp-for="Person.FirstName" class="form-control"/>
+    <span asp-validation-for="Person.FirstName" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <div>
+        <label asp-for="Person.LastName" class="control-label"></label> *
+    </div>
+    <input asp-for="Person.LastName" class="form-control"/>
+    <span asp-validation-for="Person.LastName" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <div>
+        <label asp-for="Person.IdentificationCode" class="control-label"></label> *
+    </div>
+    <input asp-for="Person.IdentificationCode" class="form-control"/>
+    <span asp-validation-for="Person.IdentificationCode" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <div>
+        <label asp-for="Person.BirthDate" class="control-label"></label> *
+    </div>
+    <input asp-for="Person.BirthDate" class="form-control"/>
+    <span asp-validation-for="Person.BirthDate" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label class="mr-sm-2" for="inlineFormCustomSelect" asp-for="Person.Gender"></label>
+    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" asp-for="Person.Gender">
+        <option selected value="">@Base.Resources.DTO.v1.Person.Choose</option>
+        <option value="Man">@Base.Resources.DTO.v1.Person.Man</option>
+        <option value="Woman">@Base.Resources.DTO.v1.Person.Woman</option>
+    </select>
+</div>

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="CountryId" xml:space="preserve">
+        <value>Võistkonna riik</value>
+    </data>
+    <data name="Country" xml:space="preserve">
+        <value>Riik</value>
+    </data>
+    <data name="AppUserId" xml:space="preserve">
+        <value>Kasutaja</value>
+    </data>
+    <data name="PlayersAmount" xml:space="preserve">
+        <value>Mängijate hulk</value>
+    </data>
+    <data name="TeamMembers" xml:space="preserve">
+        <value>Võistkonna liikmed</value>
+    </data>
+    <data name="TeamMember" xml:space="preserve">
+        <value>Võistkonna liige</value>
+    </data>
+    <data name="Role" xml:space="preserve">
+        <value>Roll</value>
+    </data>
+    <data name="TeamMemberSince" xml:space="preserve">
+        <value>Võistkonna liige alates</value>
+    </data>
+    <data name="CreateNewTeam" xml:space="preserve">
+        <value>Lisa uus võistkond</value>
+    </data>
+    <data name="AddMembers" xml:space="preserve">
+        <value>Lisa liikmeid</value>
+    </data>
+    <data name="MyTeams" xml:space="preserve">
+        <value>Minu võistkonnad</value>
+    </data>
+    <data name="Teams" xml:space="preserve">
+        <value>Kõik võistkonnad</value>
+    </data>
+    <data name="AddMember" xml:space="preserve">
+        <value>Lisa liige</value>
+    </data>
+    <data name="BackToTeamsList" xml:space="preserve">
+        <value>Tagasi võistkondade juurde</value>
+    </data>
+    <data name="BackToTeam" xml:space="preserve">
+        <value>Tagasi võistkonna juurde</value>
+    </data>
+    <data name="DbTeam" xml:space="preserve">
+        <value>Võistkonna</value>
+    </data>
+    <data name="Error" xml:space="preserve">
+        <value>Ei saa seda võistkonda kustutada, välja arvatud juhul, kui Te kustutate kõik selle võistkonna esinemised andmebaasi tabelites: Võistluste võistkonnad, võistkonna liikmed ja mängud</value>
+    </data>
+</root>

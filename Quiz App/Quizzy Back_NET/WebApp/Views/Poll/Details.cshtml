@@ -1,0 +1,39 @@
+@model WebApp.ViewModels.Poll.PollDetailsViewModel
+
+<h1 class="text-center">@Model.Poll!.Name</h1>
+<table class="table table-hover">
+    <thead>
+    <tr class="text-center">
+        <th>
+            Question number
+        </th>
+        <th>
+            Question
+        </th>
+        <th>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.PollQuestions) {
+        <tr class="text-center">
+            <td>
+                @Html.DisplayFor(modelItem => item.Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Question!.Value)
+            </td>
+            <td>
+                <a class="text-dark" asp-controller="QuestionAnswer" asp-action="Index" asp-route-id="@item.QuestionId">Answers</a> |
+                <a class="text-dark" asp-controller="Question" asp-action="Edit" asp-route-id="@item.QuestionId">Edit</a> |
+                <a class="text-dark" asp-controller="QuestionAnswer" asp-action="Create" asp-route-questionId="@item.QuestionId">Add Answer</a> |
+                <a class="text-dark" asp-controller="PollQuestion" asp-action="Delete" asp-route-id="@item.Id">Remove from Poll</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+<hr />
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
